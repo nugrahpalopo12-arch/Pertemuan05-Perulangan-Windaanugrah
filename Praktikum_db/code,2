@@ -1,0 +1,16 @@
+DELIMITER //
+
+CREATE PROCEDURE hitung_total()
+BEGIN
+ 	DECLARE v_counter INT DEFAULT 1;
+	DECLARE v_total INT DEFAULT 0;
+
+	WHILE v_counter <=20 DO
+    	SET v_total = v_total + v_counter;
+        SET v_counter = v_counter + 1;
+ END WHILE;
+ 
+ SELECT CONCAT('Total angka 1 sampai 20 = ', v_total) AS hasil;
+END //
+
+DELIMITER ;

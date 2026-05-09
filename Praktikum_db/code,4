@@ -1,0 +1,19 @@
+DELIMITER //
+
+CREATE PROCEDURE hitung_belanja_ringkas()
+BEGIN
+  DECLARE v_total BIGINT DEFAULT 0;
+  DECLARE v_belanja BIGINT DEFAULT 50000;
+  
+  WHILE v_total < 500000 DO
+    SET v_total = v_total + v_belanja;
+  END WHILE;
+  
+  SELECT 
+    v_total AS 'Total Belanja (Rp)',
+    'Lunas!' AS 'Status';
+END//
+
+DELIMITER ;
+
+CALL hitung_belanja_ringkas();

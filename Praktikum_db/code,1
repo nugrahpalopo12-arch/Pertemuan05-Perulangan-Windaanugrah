@@ -1,0 +1,17 @@
+DELIMITER $$
+
+CREATE PROCEDURE tampil_angka_loop()
+BEGIN
+  DECLARE v_counter INT DEFAULT 1;
+  
+  loop_angka: LOOP
+    IF v_counter > 10 THEN
+      LEAVE loop_angka;
+    END IF;
+    
+    SELECT v_counter AS angka;
+    SET v_counter = v_counter + 1;
+  END LOOP;
+END$$
+
+DELIMITER ;
